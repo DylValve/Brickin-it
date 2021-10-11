@@ -1,0 +1,109 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'museo500';
+    src: url('../fonts/museo300-regular-webfont.woff2') format('woff2'),
+         url('../fonts/museo300-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo700';
+    src: url('../fonts/museo700-regular-webfont.woff2') format('woff2'),
+         url('../fonts/museo700-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #fde99d;
+}
+
+div {
+
+}
+
+header {
+	background-color: #d90416;
+}
+
+.logo-background {
+	margin: 10px;
+	background-color: white;
+}
+
+.logo-div {
+    margin: 0 auto;
+}
+
+.main-menu {
+    background-color: #c7d6e9;
+    position: relative;
+    bottom: 0px;
+}
+
+.title-1 {
+	font-size: 120px;
+	color: white;
+	font-family: museo500;
+	-webkit-text-stroke: 10px #fcd954;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+    left: -303px;
+
+}
+
+.title-2 {
+	font-size: 120px;
+	color: white;
+	font-family: museo500;
+	-webkit-text-stroke: 4px black;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	left: -303px;
+}
+
+.center {
+	position: relative;
+	height: 200px;
+    width: 10px;
+    margin: 0 auto;
+}
+
+.main-button {
+    margin: 0 auto;
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    background-color: #1e5aa8;
+}
+
+.div-gap {
+    height: 10%;
+}
+
+.main-link {
+    width: 100%;
+    height: 100%;
+}
+
+.button-text {
+    font-size: 80px;
+    color: white;
+    font-family: museo500;
+    -webkit-text-stroke: 3px black;
+    text-align: center;
+    margin: 0;
+}
+
+.button-container {
+    height: 200px;
+}
