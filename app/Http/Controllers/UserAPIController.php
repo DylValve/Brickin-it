@@ -48,7 +48,7 @@ class UserAPIController extends BaseController
             $success['name'] = $user->name;
         } catch (QueryException $e) {
             $errorCode = $e->errorInfo[1];
-            if ($errorCode == 1062 Or $errorCode == 500) {
+            if ($errorCode == 1062) {
                 return $this->sendError('The email entered has already been used.', ['error' => 'Duplicate Email']);
             }
         }
