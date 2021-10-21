@@ -4,7 +4,9 @@ use App\Http\Controllers\APISetController;
 use App\Http\Controllers\ThemeAPIController;
 use App\Http\Controllers\UserAPIController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+if (App::environment('production')) {
+    URL::forceScheme('https');
+}
 
 Route::post('/register', [UserAPIController::class, 'signup']);
 Route::post('/login', [UserAPIController::class, 'signin']);
