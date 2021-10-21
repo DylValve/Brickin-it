@@ -20,8 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::post('/register', [UserAPIController::class, 'signup']);
 Route::post('/login', [UserAPIController::class, 'signin']);
 
-Route::middleware('auth:sanctum')->group( function () {
+Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [UserAPIController::class, 'logout']);
     Route::resource('themes', ThemeAPIController::class);
     Route::resource('sets', APISetController::class);
 });
+
+Route::get('sets/lookup/{set_number}', [APISetController::class, "apiSearchNumber"]);
+Route::get('sets/lookup/{set_name}', [APISetController::class, "apiSearchName"]);
