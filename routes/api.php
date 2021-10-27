@@ -26,5 +26,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('sets', APISetController::class);
 });
 
-Route::get('sets/lookup/{set_number}', [APISetController::class, "apiSearchNumber"]);
-Route::get('sets/lookup/{set_name}', [APISetController::class, "apiSearchName"]);
+Route::get('sets/lookupby/number/{set_number}', [APISetController::class, "apiSearchNumber"]);
+Route::get('sets/lookupby/name/{set_name}', [APISetController::class, "apiSearchName"]);
