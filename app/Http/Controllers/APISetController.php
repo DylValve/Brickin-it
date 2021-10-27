@@ -26,14 +26,9 @@ class APISetController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate(
-            $request,
-            [
-                'set_Name' => 'required|max:32',
-                'set_Number' => 'required|max:200',
-            ]
-
-        );
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+        ]);
         $set = Set::create($request->all());
 
         return response()->json($set, 201);
@@ -60,14 +55,9 @@ class APISetController extends Controller
      */
     public function update(Request $request, Set $set)
     {
-        $this->validate(
-            $request,
-            [
-                'set_Name' => 'required|max:32',
-                'set_Number' => 'required|max:200',
-            ]
-
-        );
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+        ]);
         $set->update($request->all());
         return response()->json($set, 201);
     }
