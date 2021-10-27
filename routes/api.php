@@ -22,9 +22,10 @@ Route::post('/login', [UserAPIController::class, 'signin']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [UserAPIController::class, 'logout']);
-    Route::resource('themes', ThemeAPIController::class);
-    Route::resource('sets', APISetController::class);
 });
+
+Route::resource('themes', ThemeAPIController::class);
+Route::resource('sets', APISetController::class);
 
 Route::get('sets/lookupby/number/{set_number}', [APISetController::class, "apiSearchNumber"]);
 Route::get('sets/lookupby/name/{set_name}', [APISetController::class, "apiSearchName"]);
