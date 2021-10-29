@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CollectionSetFix;
 use Illuminate\Http\Request;
 
 class APICollectionSetFixController extends Controller
@@ -13,7 +14,8 @@ class APICollectionSetFixController extends Controller
      */
     public function index()
     {
-        //
+        $cSFC = CollectionSetFix::all();
+        return response()->json($cSFC, 200);
     }
 
     /**
@@ -24,7 +26,8 @@ class APICollectionSetFixController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cSFC = CollectionSetFix::create($request->all());
+        return response()->json($cSFC, 201);
     }
 
     /**
@@ -33,9 +36,9 @@ class APICollectionSetFixController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(CollectionSetFix $cSFC)
     {
-        //
+        return response()->json($cSFC, 200);
     }
 
     /**
@@ -45,9 +48,10 @@ class APICollectionSetFixController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, CollectionSetFix $cSFC)
     {
-        //
+        $cSFC->update($request->all());
+        return response()->json($cSFC, 201);
     }
 
     /**
@@ -56,8 +60,9 @@ class APICollectionSetFixController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(CollectionSetFix $cSFC)
     {
-        //
+        $cSFC->delete();
+        return response()->json(null, 204);
     }
 }
