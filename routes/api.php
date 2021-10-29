@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\APICollectionController;
+use App\Http\Controllers\APICollectionSetFixController;
 use App\Http\Controllers\APISetController;
 use App\Http\Controllers\ThemeAPIController;
 use App\Http\Controllers\UserAPIController;
@@ -26,6 +28,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
 Route::resource('themes', ThemeAPIController::class);
 Route::resource('sets', APISetController::class);
+Route::resource('collections', APICollectionController::class);
+Route::resource('collectionsets', APICollectionSetFixController::class);
 
 Route::get('sets/lookupby/number/{set_number}', [APISetController::class, "apiSearchNumber"]);
 Route::get('sets/lookupby/name/{set_name}', [APISetController::class, "apiSearchName"]);
