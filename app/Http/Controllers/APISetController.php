@@ -74,13 +74,13 @@ class APISetController extends Controller
         return response()->json(null, 204);
     }
 
-    public function apiSearchNumber(int $set_number)
+    public function apiSearchNumber(string $set_number)
     {
         $set = Set::where('set_number', $set_number)->first();
         return response()->json($set, 200);
     }
 
-    public function apiSearchName(Set $name)
+    public function apiSearchName(string $name)
     {
         $set = Set::where('name', $name)->first();
         return response()->json($set, 200);
