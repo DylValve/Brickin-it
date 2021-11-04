@@ -28,6 +28,7 @@ class APISetController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|max:255',
+            'set_number' => 'required',
         ]);
         $set = Set::create($request->all());
 
@@ -57,6 +58,7 @@ class APISetController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|max:255',
+            'set_number' => 'required',
         ]);
         $set->update($request->all());
         return response()->json($set, 201);

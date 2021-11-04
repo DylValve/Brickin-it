@@ -14,6 +14,7 @@ class Set extends Model
         'set_number',
         'picture',
         'theme_id',
+        'barcode',
     ];
 
     public function theme()

@@ -19,6 +19,7 @@ class CreateSetsTable extends Migration
             $table->string('set_number');
             $table->string('picture')->nullable();
             $table->integer('theme_id')->unsigned()->nullable();
+            $table->string('barcode')->nullable();
             /**
             $table->foreign('theme_id')->references('id')->on('themes')
 
