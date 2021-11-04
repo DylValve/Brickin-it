@@ -29,7 +29,8 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::resource('themes', ThemeAPIController::class);
 Route::resource('sets', APISetController::class);
 Route::resource('collections', APICollectionController::class);
-Route::resource('collectionsets', APICollectionSetFixController::class);
+Route::resource('collection-sets', APICollectionSetFixController::class);
 
-Route::get('sets/lookupby/number/{set_number}', [APISetController::class, "apiSearchNumber"]);
-Route::get('sets/lookupby/name/{set_name}', [APISetController::class, "apiSearchName"]);
+Route::get('sets/look-up-by/number/{set_number}', [APISetController::class, "apiSearchNumber"]);
+Route::get('sets/look-up-by/name/{set_name}', [APISetController::class, "apiSearchName"]);
+Route::get('sets/look-up-by/barcode/{set_barcode}', [APISetController::class, "apiSearchBarcode"]);

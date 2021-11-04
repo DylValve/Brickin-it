@@ -87,4 +87,10 @@ class APISetController extends Controller
         $set = Set::where('name', $name)->first();
         return response()->json($set, 200);
     }
+
+    public function apiSearchBarcode(string $barcode)
+    {
+        $set = Set::where('barcode', $barcode)->first();
+        return response()->json($set, 200);
+    }
 }
