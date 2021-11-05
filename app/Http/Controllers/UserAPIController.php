@@ -62,7 +62,7 @@ class UserAPIController extends BaseController
 
         return [
             'message' => 'Logged out',
-            'success' => 'true'
+            'success' => true
         ];
     }
 
