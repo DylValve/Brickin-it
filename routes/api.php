@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\APICollectionController;
 use App\Http\Controllers\APICollectionSetFixController;
+use App\Http\Controllers\APIDocumentController;
 use App\Http\Controllers\APISetController;
 use App\Http\Controllers\ThemeAPIController;
 use App\Http\Controllers\UserAPIController;
@@ -34,3 +35,6 @@ Route::resource('collection-sets', APICollectionSetFixController::class);
 Route::get('sets/look-up-by/number/{set_number}', [APISetController::class, "apiSearchNumber"]);
 Route::get('sets/look-up-by/name/{set_name}', [APISetController::class, "apiSearchName"]);
 Route::get('sets/look-up-by/barcode/{set_barcode}', [APISetController::class, "apiSearchBarcode"]);
+
+
+Route::post('/store-file', [APIDocumentController::class, 'store']);
