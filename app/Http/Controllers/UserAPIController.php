@@ -20,6 +20,7 @@ class UserAPIController extends BaseController
             $authUser = Auth::user();
             $success['token'] = $authUser->createToken('MyAuthApp')->plainTextToken;
             $success['name'] = $authUser->name;
+            $success['id'] = $authUser->id;
 
             return $this->sendResponse($success, 'User signed in');
         } else {
