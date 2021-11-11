@@ -18,9 +18,9 @@ class UserAPIController extends BaseController
     {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $authUser = Auth::user();
+            $success['id'] = $authUser->id;
             $success['token'] = $authUser->createToken('MyAuthApp')->plainTextToken;
             $success['name'] = $authUser->name;
-            $success['id'] = $authUser->id;
 
             return $this->sendResponse($success, 'User signed in');
         } else {
