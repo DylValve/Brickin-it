@@ -45,7 +45,8 @@ class APIDocumentController extends Controller
             return response()->json([
                 "success" => true,
                 "message" => "File successfully uploaded",
-                "file" => $file
+                "file" => $file,
+                "file_name" => $filename
             ]);
         }
 
