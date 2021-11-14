@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CollectionSetFix;
+use App\Models\Set;
 use Illuminate\Http\Request;
 
 class APICollectionSetFixController extends Controller
@@ -64,5 +65,21 @@ class APICollectionSetFixController extends Controller
     {
         $cSFC->delete();
         return response()->json(null, 204);
+    }
+
+    public function collectionSetSearch(string $collection_id)
+    {
+        $items = array();
+        $collectionSets = CollectionSetFix::all();
+        $sets = Set::all();
+        $resultRelations = $collectionSets->where('collection_id', $collection_id);
+        foreach ($resultRelations as $relation) {
+            foreach ($sets as $set) {
+                if ($relation->set_id == $set->id){
+                    $items[] = $set;
+                }
+            }
+        }
+        return response()->json($items, 200);
     }
 }

@@ -37,5 +37,6 @@ Route::get('sets/look-up-by/name/{set_name}', [APISetController::class, "apiSear
 Route::get('sets/look-up-by/barcode/{set_barcode}', [APISetController::class, "apiSearchBarcode"]);
 
 Route::get('collections/user/{user_id}', [APICollectionController::class, "userCollections"]);
+Route::get('collections/sets/{collection_id}', [APICollectionSetFixController::class, "CollectionSetSearch"]);
 
 Route::post('/store-file', [APIDocumentController::class, 'store']);
