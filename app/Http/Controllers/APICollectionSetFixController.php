@@ -63,9 +63,12 @@ class APICollectionSetFixController extends Controller
      */
     public function destroy(CollectionSetFix $collectionSetFix)
     {
-        $item = CollectionSetFix::all();
-        $item->find($collectionSetFix);
-        $item->delete();
+        $items = CollectionSetFix::all();
+        foreach ($items as $item) {
+            if ($item->id == $collectionSetFix){
+                $item->delete();
+            }
+        }
         return response()->json(null, 204);
     }
 
