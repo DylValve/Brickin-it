@@ -36,5 +36,6 @@ Route::get('sets/look-up-by/number/{set_number}', [APISetController::class, "api
 Route::get('sets/look-up-by/name/{set_name}', [APISetController::class, "apiSearchName"]);
 Route::get('sets/look-up-by/barcode/{set_barcode}', [APISetController::class, "apiSearchBarcode"]);
 
+Route::get('collection/user/{user_id}', [APICollectionController::class, "userCollections"]);
 
 Route::post('/store-file', [APIDocumentController::class, 'store']);
