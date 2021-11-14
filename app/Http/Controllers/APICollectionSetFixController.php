@@ -61,14 +61,9 @@ class APICollectionSetFixController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function destroy(CollectionSetFix $collectionSetFix)
+    public function destroy(CollectionSetFix $set)
     {
-        $items = CollectionSetFix::all();
-        foreach ($items as $item) {
-            if ($item->id == $collectionSetFix){
-                $item->delete();
-            }
-        }
+        $set->delete();
         return response()->json(null, 204);
     }
 
