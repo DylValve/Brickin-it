@@ -62,7 +62,7 @@ class APICollectionSetFixController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function destroy(CollectionSetFix $cSFC)
+    public function destroy(string $cSFC)
     {
         $item = CollectionSetFix::where('id', $cSFC)->first();
         $item->delete();
