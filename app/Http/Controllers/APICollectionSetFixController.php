@@ -39,8 +39,8 @@ class APICollectionSetFixController extends Controller
      */
     public function show(string $cSFC)
     {
-        $set = CollectionSetFix::where('id', $cSFC)->first();
-        return response()->json($set, 200);
+        $item = CollectionSetFix::where('id', $cSFC)->first();
+        return response()->json($item, 200);
     }
 
     /**
@@ -62,9 +62,10 @@ class APICollectionSetFixController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function destroy(CollectionSetFix $set)
+    public function destroy(CollectionSetFix $cSFC)
     {
-        $set->delete();
+        $item = CollectionSetFix::where('id', $cSFC)->first();
+        $item->delete();
         return response()->json(null, 204);
     }
 
