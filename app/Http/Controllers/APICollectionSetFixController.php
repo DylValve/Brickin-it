@@ -64,7 +64,7 @@ class APICollectionSetFixController extends Controller
     public function destroy(CollectionSetFix $set)
     {
         $set->delete();
-        return response()->json(null, 204);
+        return response()->json(null, 201);
     }
 
     public function collectionSetSearch(string $collection_id)
