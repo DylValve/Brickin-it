@@ -69,6 +69,22 @@ class APICollectionSetFixController extends Controller
         return response()->json(null, 204);
     }
 
+    public function altDestroy(string $set_id, string $collection_id)
+    {
+        $cSFC = null;
+        $collectionSets = CollectionSetFix::all();
+        foreach ($collectionSets as $item){
+            if ($item->collection_id == $collection_id){
+                if ($item->set_id == $set_id){
+                    $cSFC = CollectionSetFix::where('id', $item->id)->first();
+                    break;
+                }
+            }
+        }
+        $cSFC->delete();
+        return response()->json(null, 204);
+    }
+
     public function collectionSetSearch(string $collection_id)
     {
         $items = array();
