@@ -100,4 +100,11 @@ class APICollectionSetFixController extends Controller
         }
         return response()->json($items, 200);
     }
+
+    public function altCollectionSetSearch(string $collection_id)
+    {
+        $items = CollectionSetFix::all();
+        $cSFC = $items->where('collection_id', $collection_id);
+        return response()->json($cSFC, 200);
+    }
 }
