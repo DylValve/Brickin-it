@@ -38,6 +38,6 @@ Route::get('sets/look-up-by/barcode/{set_barcode}', [APISetController::class, "a
 
 Route::get('collections/user/{user_id}', [APICollectionController::class, "userCollections"]);
 Route::get('collections/sets/{collection_id}', [APICollectionSetFixController::class, "collectionSetSearch"]);
-Route::delete('collections/alt-delete/{set_id}/{collection_id}', [APICollectionSetFixController::class, "altDestroy"]);
+Route::get('collections/alt-delete/{set_id}/{collection_id}', [APICollectionSetFixController::class, "altDestroy"]);
 
 Route::post('/store-file', [APIDocumentController::class, 'store']);
