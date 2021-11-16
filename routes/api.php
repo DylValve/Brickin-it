@@ -37,6 +37,7 @@ Route::get('sets/look-up-by/name/{set_name}', [APISetController::class, "apiSear
 Route::get('sets/look-up-by/barcode/{set_barcode}', [APISetController::class, "apiSearchBarcode"]);
 
 Route::get('collections/user/{user_id}', [APICollectionController::class, "userCollections"]);
-Route::get('collections/sets/{collection_id}', [APICollectionSetFixController::class, "CollectionSetSearch"]);
+Route::get('collections/sets/{collection_id}', [APICollectionSetFixController::class, "collectionSetSearch"]);
+Route::get('collections/alt-delete/{set_id}/{collection_id}', [APICollectionSetFixController::class, "altDestroy"]);
 
 Route::post('/store-file', [APIDocumentController::class, 'store']);
