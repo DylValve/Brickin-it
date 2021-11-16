@@ -69,7 +69,7 @@ class APICollectionSetFixController extends Controller
         return response()->json(null, 204);
     }
 
-    public function altDestroy(string $set_id, string $collection_id)
+    public function altShow(string $set_id, string $collection_id)
     {
         $cSFC = null;
         $collectionSets = CollectionSetFix::all();
@@ -81,8 +81,7 @@ class APICollectionSetFixController extends Controller
                 }
             }
         }
-        $cSFC->delete();
-        return response()->json(null, 204);
+        return response()->json($cSFC, 200);
     }
 
     public function collectionSetSearch(string $collection_id)
