@@ -69,8 +69,12 @@ class APICollectionController extends Controller
 
     public function userCollections(string $user_id)
     {
-        $items = Collection::all();
-        $collection = $items->where('user_id', $user_id);
+        $collection = array();
+        $collections = Collection::all();
+        $collectionResults = $collections->where('user_id', $user_id);
+        foreach ($collectionResults as $item) {
+            $collection[] = $item;
+        }
         return response()->json($collection, 200);
     }
 }
