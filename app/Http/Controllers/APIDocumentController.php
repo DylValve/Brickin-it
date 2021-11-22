@@ -28,7 +28,7 @@ class APIDocumentController extends Controller
     {
         $validator = Validator::make($request->all(),
             [
-                'file'  => 'required|mimes:png,jpg|max:2048',
+                'file'  => 'required|max:2048',
             ]);
 
         if ($validator->fails()) {
