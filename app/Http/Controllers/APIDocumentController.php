@@ -26,15 +26,6 @@ class APIDocumentController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(),
-            [
-                'file'  => 'required|max:2048',
-            ]);
-
-        if ($validator->fails()) {
-            return response()->json(['error' => $validator->errors()], 401);
-        }
-
         if($request->hasfile('file'))
         {
             $file = $request->file('file');
